@@ -20,7 +20,7 @@ services:
 
   user:
     container_name: user
-    image: jayinglovecoding/attendance:user1
+    image: jayinglovecoding/attendance:user2
     restart: always
     expose:
      - "8081"
@@ -54,3 +54,11 @@ services:
     depends_on:
       - nginx
 
+  frontend:
+    container_name: frontend
+    image: jayinglovecoding/attendance:react5
+    restart: always
+    expose:
+      - "3000"
+    depends_on:
+      - nginx
